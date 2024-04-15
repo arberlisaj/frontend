@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+:root {
+  --tomato: hsl(4, 100%, 67%);
+  --dark-slate-gray: hsl(234, 29%, 20%);
+  --charcoal-gray: hsl(235, 18%, 26%);
+  --gray: hsl(231, 7%, 60%);
+  --white: hsl(0, 0%, 100%);
+}
+body {
+  background-color: var(--charcoal-gray);
+}
+.mobileIllustration {
+  width: 100%;
+}
+main {
+  background-color: var(--white);
+}
+section.form {
+  padding: 15px;
+}
+section.form h1 {
+  font-size: 2rem;
+  margin-block: 15px;
+}
+section.form p {
+  font-size: 16px;
+}
+ul {
+  margin-block: 20px 25px;
+}
+ul li {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+form {
+  display: grid;
+}
+form label {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-weight: 12px;
+  margin-bottom: 10px;
+}
+form label span:nth-of-type(2) {
+  display: none;
+}
+form input {
+  padding: 15px 10px;
+  border-radius: 4px;
+  border: 1px solid var(--gray);
+  outline: none;
+}
+button {
+  margin-top: 15px;
+  padding: 20px 10px;
+  background-color: var(--dark-slate-gray);
+  color: var(--white);
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+button:hover {
+  opacity: 0.7;
+}
+button:active {
+  opacity: 1;
+}
+section.confirmation {
+  background-color: var(--white);
+  padding: 20px;
+}
+@media (max-width: 750px) {
+  section.confirmation {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    padding-block: 40px;
+  }
+  section.confirmation img {
+    max-width: 60px;
+    width: 100%;
+  }
+  section.confirmation h1 {
+    font-size: 2rem;
+    margin-block: 20px 15px;
+  }
+}
+/* Desktop styles  */
+@media (min-width: 750px) {
+  body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+  main {
+    max-width: 850px;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10px;
+    background-color: var(--white);
+    border: 1px solid var(--gray);
+    padding: 20px;
+    border-radius: 15px;
+  }
+  main section.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  main section.form h1 {
+    font-size: 2.5rem;
+  }
+  picture {
+    min-width: 350px;
+  }
+
+  section.confirmation {
+    padding: 40px;
+    background-color: white;
+    max-width: 450px;
+    border-radius: 15px;
+  }
+  section.confirmation img {
+    width: 100%;
+    max-width: 55px;
+    margin-bottom: 10px;
+  }
+  section.confirmation h1 {
+    font-size: 2.2rem;
+  }
+  section.confirmation p {
+    margin-block: 10px;
+  }
+  section.confirmation button {
+    width: 100%;
+  }
+}
