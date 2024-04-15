@@ -1,0 +1,83 @@
+@use "../Styles/variables";
+section {
+  margin-top: 10px;
+  border-radius: 10px;
+  padding: 20px 30px;
+  background-color: variables.$very-pale-orange;
+  h1#spending {
+    font-size: 30px;
+    padding-block: 20px 60px;
+  }
+  article {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    column-gap: 10px;
+
+    div {
+      transition: 0.2s;
+      width: 100%;
+      display: block;
+      text-align: center;
+      .candle {
+        width: 95%;
+        // height: 50px;
+        border-radius: 10px;
+        background-color: variables.$soft-red;
+        position: relative;
+        &:hover .hover {
+          display: block;
+        }
+
+        .hover {
+          width: calc(100% + 5px);
+          left: 50%;
+          top: -40px;
+          transform: translateX(-50%);
+          position: absolute;
+          padding: 7px 10px;
+          border-radius: 5px;
+          background-color: variables.$dark-brown;
+          color: variables.$very-pale-orange;
+          display: none;
+        }
+      }
+      .candle:hover {
+        background-color: variables.$cyan;
+        cursor: pointer;
+      }
+
+      p {
+        text-transform: lowercase;
+        color: variables.$medium-brown;
+      }
+    }
+  }
+  hr {
+    margin-block: 30px;
+    border: 1px solid variables.$cream;
+
+    background-color: transparent;
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+
+    span {
+      color: variables.$medium-brown;
+    }
+    .monthly {
+      span {
+        position: relative;
+      }
+    }
+    .lastMonth {
+      p {
+        font-size: 18px;
+      }
+    }
+  }
+}
