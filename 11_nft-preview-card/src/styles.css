@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0d192b;
+  min-height: 100vh;
+  color: white;
+  padding: 10px;
+  display: flex;
+  font-family: sans-serif;
+}
+
+@media (min-width: 700px) {
+  body {
+    align-items: center;
+    justify-content: center;
+  }
+}
