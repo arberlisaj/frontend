@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: hsl(226, 43%, 10%);
+}
+@layer base {
+  li button {
+    @apply cursor-pointer hover:opacity-70 active:opacity-100 capitalize md:text-lg;
+  }
+}
+.active {
+  color: white;
+}
+.task:nth-of-type(2) {
+  background: url("./images/icon-work.svg");
+}
+.task:nth-of-type(3) {
+  background: url("./images/icon-play.svg");
+}
+.task:nth-of-type(4) {
+  background: url("./images/icon-study.svg");
+}
+.task:nth-of-type(5) {
+  background: url("./images/icon-exercise.svg");
+}
+.task:nth-of-type(6) {
+  background: url("./images/icon-social.svg");
+}
+.task:nth-of-type(7) {
+  background: url("./images/icon-self-care.svg");
+}
