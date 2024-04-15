@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Intro Section</title>
+  </head>
+  <body>
+    <header>
+      <div class="desktopLinks">
+        <img class="logo" src="./images/logo.svg" alt="website logo" />
+        <ul class="hideMobile">
+          <li class="features">
+            Features <img src="./images/icon-arrow-down.svg" alt="caret" />
+            <ul class="listStyles features__list hide">
+              <li><img src="./images/icon-todo.svg" alt="todo" /> Todo List</li>
+              <li>
+                <img src="./images/icon-calendar.svg" alt="calendar" /> Calendar
+              </li>
+              <li>
+                <img src="./images/icon-reminders.svg" alt="reminder" />
+                Reminder
+              </li>
+              <li>
+                <img src="./images/icon-planning.svg" alt="planning" /> Planning
+              </li>
+            </ul>
+          </li>
+          <li class="company">
+            Company <img src="./images/icon-arrow-down.svg" alt="caret" />
+
+            <ul class="listStyles company__list hide">
+              <li>History</li>
+              <li>Our Team</li>
+              <li>Blog</li>
+            </ul>
+          </li>
+          <li>Careers</li>
+          <li>About</li>
+        </ul>
+      </div>
+      <div class="buttons hideMobile">
+        <button class="login">Login</button>
+        <button class="register">Register</button>
+      </div>
+      <button class="menuBtn">
+        <img src="./images/icon-menu.svg" alt="menu" />
+      </button>
+    </header>
+    <aside>
+      <button class="closeMenuBtn">
+        <img src="./images/icon-close-menu.svg" alt="close" />
+      </button>
+      <ul>
+        <li>Features <img src="./images/icon-arrow-down.svg" alt="caret" /></li>
+        <li>Company <img src="./images/icon-arrow-down.svg" alt="caret" /></li>
+        <li>Careers</li>
+        <li>About</li>
+      </ul>
+      <button class="login">Login</button>
+      <button class="register">Register</button>
+    </aside>
+    <section>
+      <picture>
+        <picture>
+          <source
+            media="(min-width:870px)"
+            srcset="./images/desktop-hero.png"
+          />
+          <img src="./images/mobile-hero.png" alt="random illustration" />
+        </picture>
+      </picture>
+      <div>
+        <h1><span>Make</span> remote work</h1>
+        <p>
+          Get your team in sync, no matter your location. Streamline processes,
+          create team rituals , and watch productivity soar.
+        </p>
+        <button>Learn more</button>
+        <ul>
+          <li><img src="./images/client-databiz.svg" alt="databliz" /></li>
+          <li><img src="./images/client-audiophile.svg" alt="audiophile" /></li>
+          <li><img src="./images/client-meet.svg" alt="meet" /></li>
+          <li><img src="./images/client-maker.svg" alt="maker" /></li>
+        </ul>
+      </div>
+    </section>
+    <script>
+      const menuBtn = document.querySelector(".menuBtn");
+      const closeMenuBtn = document.querySelector(".closeMenuBtn");
+      const featuresBtn = document.querySelector(".features");
+      const companyBtn = document.querySelector(".company");
+      const asideEl = document.querySelector("aside");
+      const featuresList = document.querySelector(".features__list");
+      const companyList = document.querySelector(".company__list");
+
+      companyBtn.addEventListener("click", () => {
+        companyList.classList.toggle("hide");
+      });
+
+      menuBtn.addEventListener("click", () => {
+        asideEl.classList.add("open-aside");
+      });
+
+      closeMenuBtn.addEventListener("click", () => {
+        asideEl.classList.remove("open-aside");
+      });
+
+      featuresBtn.addEventListener("click", (e) => {
+        featuresList.classList.toggle("hide");
+      });
+
+      [featuresBtn, companyBtn, featuresList, companyList].forEach(
+        (element) => {
+          element.addEventListener("click", (e) => {
+            e.stopPropagation();
+          });
+        }
+      );
+
+      // hiding elements when outside click
+      document.addEventListener("click", () => {
+        featuresList.classList.add("hide");
+        companyList.classList.add("hide");
+      });
+    </script>
+  </body>
+</html>
