@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+:root {
+  --light-gray: hsl(0, 0%, 67%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+  --moderate-violte: hsl(263, 55%, 52%);
+  --very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --white: hsl(0, 0%, 100%);
+}
+body {
+  padding: 10px;
+  background-color: var(--light-grayish-blue);
+}
+section {
+  background-color: var(--moderate-violte);
+  border-radius: 10px;
+  border: 1px solid rgb(202, 202, 202);
+  padding: 30px;
+}
+section:nth-of-type(1) {
+  background-image: url("./images/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position: top 10px right 100px;
+}
+section:nth-of-type(2) {
+  background-color: var(--very-dark-grayish-blue);
+}
+section:nth-of-type(3),
+section:nth-of-type(4) {
+  background-color: var(--white);
+}
+section:nth-of-type(3) .profile-container h2,
+section:nth-of-type(4) .profile-container h2 {
+  color: var(--very-dark-blackish-blue);
+}
+section:nth-of-type(3) *,
+section:nth-of-type(4) * {
+  color: var(--very-dark-grayish-blue);
+}
+section:nth-of-type(5) {
+  background-color: var(--very-dark-blackish-blue);
+}
+section p {
+  color: var(--light-grayish-blue);
+  padding-bottom: 10px;
+}
+section h1 {
+  color: var(--light-grayish-blue);
+  font-size: 28px;
+  margin-block: 15px;
+}
+section > p {
+  font-size: 18px;
+}
+.profile-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.profile-container img {
+  border-radius: 50%;
+  border: 2px solid var(--white);
+  height: 50px;
+  width: 50px;
+}
+.profile-container h2 {
+  color: var(--white);
+}
+.profile-container p {
+  color: var(--light-gray);
+  font-size: 14px;
+}
+
+@media (max-width: 1200px) {
+  section {
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 1200px) {
+  main {
+    display: grid;
+    min-height: 100vh;
+    place-content: center;
+    gap: 8px;
+    grid-template-columns: repeat(4, 1fr);
+    margin-inline: auto;
+    max-width: 1400px;
+  }
+  section h1 {
+    font-size: 20px;
+    margin-block: 5px;
+  }
+  section p {
+    font-size: 16px;
+  }
+  section:nth-of-type(1) {
+    grid-column: span 2;
+  }
+  section:nth-of-type(3) {
+    grid-row: span 2;
+  }
+  section:nth-of-type(5) {
+    grid-column: span 2;
+  }
+}
