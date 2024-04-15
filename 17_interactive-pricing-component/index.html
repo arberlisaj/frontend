@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="./images/favicon.svg" type="image/x-icon" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Simple , traffic-based pricing</h1>
+    <p>
+      Sign-up for our 30-day trial. <br />
+      No credit card required.
+    </p>
+    <section class="card">
+      <div class="flex">
+        <p>100K PAGEVIEWS</p>
+        <h2 class="hide-mobile"><span class="displayPrice"></span> /month</h2>
+      </div>
+      <!-- TODO: style the input range -->
+      <input type="range" min="0" max="100" />
+      <h2 class="hide-desktop"><span class="displayPrice"></span> /month</h2>
+      <div class="billing">
+        <span>Monthly</span>
+        <label class="switch">
+          <input type="checkbox" />
+          <span class="slider"></span>
+        </label>
+        <span>Yearly</span> <span class="discount">25% discount</span>
+      </div>
+      <hr />
+      <div class="flex ul">
+        <ul>
+          <li>
+            <img src="./images/icon-check.svg" alt="check" /><span
+              >Unlimited websites</span
+            >
+          </li>
+          <li>
+            <img src="./images/icon-check.svg" alt="check" /><span
+              >100% data ownership</span
+            >
+          </li>
+          <li>
+            <img src="./images/icon-check.svg" alt="check" /><span
+              >Email reports</span
+            >
+          </li>
+        </ul>
+        <button>Start my trial</button>
+      </div>
+    </section>
+
+    <script>
+      const rangeInput = document.querySelector('input[type="range"]');
+      const billingPlan = document.querySelector("input[type='checkbox']");
+      const element = document.querySelectorAll(".displayPrice");
+
+      element.forEach((el) => {
+        billingPlan.checked ? (el.innerHTML = "$160") : (el.innerHTML = "$16");
+      });
+
+      billingPlan.addEventListener("change", () => {
+        element.forEach((el) => {
+          billingPlan.checked
+            ? (el.innerHTML = "$160")
+            : (el.innerHTML = "$16");
+        });
+      });
+
+      rangeInput.addEventListener("input", () => {
+        element.forEach((el) => {
+          billingPlan.checked
+            ? (el.innerHTML = `$${rangeInput.value * 10}`)
+            : (el.innerHTML = `$${rangeInput.value}`);
+        });
+      });
+    </script>
+  </body>
+</html>
