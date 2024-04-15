@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="./assets/styles.css" type="text/css" />
+    <title>Advice Generator</title>
+  </head>
+  <body>
+    <main>
+      <p>Advice #<span></span></p>
+      <h1 id="result"></h1>
+      <img
+        class="devider"
+        src="./assets/pattern-divider-mobile.svg"
+        alt="devider"
+      />
+      <button title="generate" type="button" onclick="getData()">
+        <img src="./assets/icon-dice.svg" alt="dice" />
+      </button>
+    </main>
+
+    <script>
+      const displayResultEl = document.querySelector("#result");
+      const displayIdEl = document.querySelector("span");
+
+      async function getData() {
+        var randomNumber = Math.ceil(Math.random() * 150);
+        const response = await fetch(
+          `https://api.adviceslip.com/advice/${randomNumber}`
+        );
+        const movies = await response.json();
+        displayResultEl.innerHTML = movies.slip.advice;
+        displayIdEl.innerHTML = movies.slip.id;
+      }
+      getData();
+    </script>
+  </body>
+</html>
